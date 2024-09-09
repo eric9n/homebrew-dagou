@@ -14,6 +14,13 @@ class Clade < Formula
   end
 
   def install
-    bin.install "clade"
+    if Hardware::CPU.intel?
+      bin.install "clade-#{version}-x86_64-apple-darwin" => "clade"
+    else
+      bin.install "clade-#{version}-aarch64-apple-darwin" => "clade"
+    end
+  end
+  test do
+    system "#{bin}/clade", "--version"
   end
 end

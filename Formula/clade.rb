@@ -1,15 +1,19 @@
 class Clade < Formula
-  desc "Description of your project"
+  desc "A tool for phylogenetic tree construction and pruning based on NCBI taxonomy data and GTDB (Genome Taxonomy Database) data."
   homepage "https://github.com/eric9n/clade"
-  url "https://github.com/eric9n/clade/releases/download/#{ENV['TAG_NAME']}/#{ENV['PROJECT_NAME']}-#{ENV['TAG_NAME']}-x86_64-apple-darwin" # Use both TAG_NAME and PROJECT_NAME
-  sha256 "your_sha256_checksum_here" # Replace with the actual SHA256 checksum
-  license "MIT"
+  version "v0.1.1"
 
-  def install
-    bin.install "clade" # Assuming the binary is named 'clade'
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/eric9n/clade/releases/download/v0.1.1/clade-v0.1.1-x86_64-apple-darwin"
+      sha256 "55b814dd419dfd43ec2de38d147d496b6204cead0c996be4ba50f196390b4c90"
+    else
+      url "https://github.com/eric9n/clade/releases/download/v0.1.1/clade-v0.1.1-aarch64-apple-darwin"
+      sha256 "226542b318adf8664217576e43f713e1db68dd0c146b6aa2ec18304cf58783c2"
+    end
   end
 
-  test do
-    system "#{bin}/clade", "--version" # Adjust the command for testing
+  def install
+    bin.install "clade"
   end
 end

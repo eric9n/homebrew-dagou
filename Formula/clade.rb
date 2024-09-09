@@ -1,15 +1,15 @@
 class Clade < Formula
   desc "A tool for phylogenetic tree construction and pruning based on NCBI taxonomy data and GTDB (Genome Taxonomy Database) data."
   homepage "https://github.com/eric9n/clade"
-  version "v0.1.2"
+  version "v0.1.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/eric9n/clade/releases/download/v0.1.2/clade-v0.1.2-x86_64-apple-darwin"
-      sha256 "ce5c69f15d1880d217eba7d79950dd73d6ba71777ee7153adda1f20547a17678"
+      url "https://github.com/eric9n/clade/releases/download/v0.1.3/clade-v0.1.3-x86_64-apple-darwin"
+      sha256 "b7309c33c40de11a7db4a1c639caee5da39c75c9dcea44fad7e153f728078ede"
     else
-      url "https://github.com/eric9n/clade/releases/download/v0.1.2/clade-v0.1.2-aarch64-apple-darwin"
-      sha256 "a90e80faa1ce94a6a01c85cdee4277b043b1e61b5be5ebaa62339f64864e24f7"
+      url "https://github.com/eric9n/clade/releases/download/v0.1.3/clade-v0.1.3-aarch64-apple-darwin"
+      sha256 "1127f6d6797e50501f6c64a8576ae06d48315d2bc01c04bf88cbc1cce56a1101"
     end
   end
 

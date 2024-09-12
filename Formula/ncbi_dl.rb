@@ -13,13 +13,16 @@ class Ncbi_dl < Formula
     end
   end
 
-  if Hardware::CPU.intel?
-    bin.install "ncbi_dl-#{version}-x86_64-apple-darwin" => "ncbi_dl"
-  else
-    bin.install "ncbi_dl-#{version}-aarch64-apple-darwin" => "ncbi_dl"
+  def install
+    if Hardware::CPU.intel?
+      bin.install "ncbi_dl-#{version}-x86_64-apple-darwin" => "ncbi_dl"
+    else
+      bin.install "ncbi_dl-#{version}-aarch64-apple-darwin" => "ncbi_dl"
+    end
   end
 
   test do
     system "#{bin}/ncbi_dl", "--version"
   end
 end
+

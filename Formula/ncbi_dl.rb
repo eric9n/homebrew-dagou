@@ -1,4 +1,4 @@
-class Ncbi_dl < Formula
+class NcbiDl < Formula
   desc "A command-line tool for downloading and managing NCBI data."
   homepage "https://github.com/eric9n/ncbi_dl"
   version "v0.1.10"
